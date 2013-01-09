@@ -1,0 +1,1 @@
+/usr/bin/X11/idle -d -s -r $*

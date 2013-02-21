@@ -113,17 +113,30 @@ def check_letter (guess,underscore,letter):
 ###########main##########
 
 guess=random_word (words)
-print(guess)
+#print(guess)
 underscore="_"*len (guess)
-while (1):
+n=0
+while (n<len(drawings)):
 	letter=input("guess a letter: ")
-	underscore=check_letter (guess,underscore,letter)
-	print (underscore)	
+	underscore2=check_letter (guess,underscore,letter)
+	print (underscore2)
+	if underscore2==guess:
+		print ("you won!")
+		break
+	elif not  underscore==underscore2:
+		print(underscore2)
+		underscore=underscore2
+	else:
+		print(drawings[n])
+		n=n+1
+		
+
 #n=0
 #
 #while (n<len(drawings)):
 #	print (drawings[n])
 #	n=n+1
+
 
 
 

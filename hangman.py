@@ -103,7 +103,6 @@ def check_letter (guess,underscore,letter):
 	for i in range (0,len(guess)):
 		if guess[i]==letter:
 			temp[i]=letter
-	print(temp)
 	return ''.join(temp)
 
 
@@ -114,6 +113,7 @@ def check_letter (guess,underscore,letter):
 
 guess=random_word (words)
 #print(guess)
+win=0
 underscore="_"*len (guess)
 n=0
 while (n<len(drawings)):
@@ -121,21 +121,26 @@ while (n<len(drawings)):
 	underscore2=check_letter (guess,underscore,letter)
 	print (underscore2)
 	if underscore2==guess:
+		win=1
 		print ("you won!")
 		break
 	elif not  underscore==underscore2:
-		print(underscore2)
+	
 		underscore=underscore2
 	else:
 		print(drawings[n])
 		n=n+1
-		
 
-#n=0
-#
-#while (n<len(drawings)):
-#	print (drawings[n])
-#	n=n+1
+if win==0:		
+	print('you lost:(')
+
+
+
+
+
+
+
+
 
 
 
